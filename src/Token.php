@@ -3,7 +3,8 @@
 namespace Webdevcave\Jwt;
 
 use Exception;
-use Webdevcave\Jwt\Signer\Hmac\Sha\Sha256Signer;
+use Webdevcave\Jwt\Secrets\Secret;
+use Webdevcave\Jwt\Signer\Hmac\Sha\Sha256HmacSigner;
 use Webdevcave\Jwt\Signer\Signer;
 use Webdevcave\Jwt\Validator\ExpValidator;
 use Webdevcave\Jwt\Validator\NbfValidator;
@@ -14,7 +15,7 @@ class Token
     /**
      *
      */
-    public const DEFAULT_SIGNER = Sha256Signer::class;
+    public const DEFAULT_SIGNER = Sha256HmacSigner::class;
 
     /**
      * @var array
@@ -56,7 +57,11 @@ class Token
      */
     public function __construct()
     {
+        $currentTime = time();
+
         $this->withHeader('typ', 'JWT')
+            ->with('iat', $currentTime)
+            ->with('nbf', $currentTime)
             ->withSigner(self::getDefaultSigner())
             ->assignValidator(new NbfValidator())
             ->assignValidator(new ExpValidator());
@@ -333,11 +338,11 @@ class Token
     }
 
     /**
-     * @param mixed $secret
+     * @param Secret $secret
      *
      * @return bool
      */
-    public function validate(mixed $secret): bool
+    public function validate(Secret $secret): bool
     {
         //Validate headers
         foreach ($this->headerValidators as $i => $validator) {
@@ -363,10 +368,10 @@ class Token
         $signer = clone $this->signer;
         $signer->setSecret($secret);
 
-        $valid = $this->signature === $signer->sign(
-                self::encodeSection(json_encode($this->headers)),
-                self::encodeSection(json_encode($this->payload))
-            );
+        $headers = self::encodeSection(json_encode($this->headers));
+        $payload = self::encodeSection(json_encode($this->payload));
+
+        $valid = $signer->verify($headers, $payload, $this->signature);
 
         if (!$valid) {
             $this->lastValidationIssue = "Token signature is invalid.";
