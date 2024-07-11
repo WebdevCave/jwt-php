@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "36b125f594841443af8701b33a1f5cbd",
+    "content-hash": "147ccace6ad4d5b6a17b1333b370a881",
     "packages": [
         {
             "name": "ralouphie/getallheaders",

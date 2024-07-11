@@ -1,6 +1,6 @@
 <?php
 
-namespace Corviz\Jwt\Validator;
+namespace Webdevcave\Jwt\Validator;
 
 abstract class Validator
 {

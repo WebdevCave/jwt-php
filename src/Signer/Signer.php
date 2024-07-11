@@ -1,6 +1,6 @@
 <?php
 
-namespace Corviz\Jwt\Signer;
+namespace Webdevcave\Jwt\Signer;
 
 abstract class Signer
 {

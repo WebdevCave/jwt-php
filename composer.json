@@ -1,5 +1,5 @@
 {
-  "name": "corviz/jwt",
+  "name": "webdevcave/jwt",
   "description": "Lib for generating Json Web Tokens using PHP",
   "type": "library",
   "license": "MIT",
@@ -10,7 +10,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Corviz\\Jwt\\": "./src"
+      "Webdevcave\\Jwt\\": "./src"
     }
   }
 }

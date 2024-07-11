@@ -1,9 +1,9 @@
 <?php
 
-namespace Corviz\Jwt;
+namespace Webdevcave\Jwt;
 
-use Corviz\Jwt\Signer\Hmac\Sha;
-use Corviz\Jwt\Signer\Signer;
+use Webdevcave\Jwt\Signer\Hmac\Sha;
+use Webdevcave\Jwt\Signer\Signer;
 use Exception;
 
 abstract class SignerFactory

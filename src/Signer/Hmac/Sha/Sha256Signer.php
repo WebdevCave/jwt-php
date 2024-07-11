@@ -1,8 +1,8 @@
 <?php
 
-namespace Corviz\Jwt\Signer\Hmac\Sha;
+namespace Webdevcave\Jwt\Signer\Hmac\Sha;
 
-use Corviz\Jwt\Signer\Hmac\HmacSigner;
+use Webdevcave\Jwt\Signer\Hmac\HmacSigner;
 
 class Sha256Signer extends HmacSigner
 {

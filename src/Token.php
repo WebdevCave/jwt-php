@@ -1,12 +1,12 @@
 <?php
 
-namespace Corviz\Jwt;
+namespace Webdevcave\Jwt;
 
-use Corviz\Jwt\Signer\Hmac\Sha\Sha256Signer;
-use Corviz\Jwt\Signer\Signer;
-use Corviz\Jwt\Validator\ExpValidator;
-use Corviz\Jwt\Validator\NbfValidator;
-use Corviz\Jwt\Validator\Validator;
+use Webdevcave\Jwt\Signer\Hmac\Sha\Sha256Signer;
+use Webdevcave\Jwt\Signer\Signer;
+use Webdevcave\Jwt\Validator\ExpValidator;
+use Webdevcave\Jwt\Validator\NbfValidator;
+use Webdevcave\Jwt\Validator\Validator;
 use Exception;
 
 class Token

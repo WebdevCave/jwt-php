@@ -51,8 +51,8 @@ composer require corviz/jwt
 ```php
 <?php
 
-use Corviz\Jwt\Token;
-use Corviz\Jwt\SignerFactory;
+use Webdevcave\Jwt\Token;
+use Webdevcave\Jwt\SignerFactory;
 
 $token = Token::create()
             ->with('exp', strtotime('+ 1 hour')) //Expires in one hour
@@ -65,7 +65,7 @@ $token = Token::create()
 ```php
 <?php
 
-use Corviz\Jwt\Token;
+use Webdevcave\Jwt\Token;
 
 $token = Token::fromString('xxxx.yyyyy.zzzzz');
 
@@ -82,7 +82,7 @@ if ($isValid) {
 First you have to create your validator
 
 ```php
-use \Corviz\Jwt\Validator\Validator;
+use \Webdevcave\Jwt\Validator\Validator;
 
 class MyClaimValidator extends Validator {
     /**
@@ -111,7 +111,7 @@ Then all you have to do is assign your validator before running *validate()* met
 ```php
 <?php
 
-use Corviz\Jwt\Token;
+use Webdevcave\Jwt\Token;
 
 $token = Token::fromString('xxxx.yyyyy.zzzzz')
             ->assignValidator(new MyClaimValidator());

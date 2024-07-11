@@ -1,8 +1,8 @@
 <?php
 
-namespace Corviz\Jwt\Signer\Hmac;
+namespace Webdevcave\Jwt\Signer\Hmac;
 
-use Corviz\Jwt\Signer\Signer;
+use Webdevcave\Jwt\Signer\Signer;
 
 abstract class HmacSigner extends Signer
 {
