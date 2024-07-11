@@ -2,9 +2,9 @@
 
 namespace Webdevcave\Jwt;
 
+use Exception;
 use Webdevcave\Jwt\Signer\Hmac\Sha;
 use Webdevcave\Jwt\Signer\Signer;
-use Exception;
 
 abstract class SignerFactory
 {
@@ -20,6 +20,7 @@ abstract class SignerFactory
     /**
      * @param string $alg
      * @param string $className
+     *
      * @return void
      */
     public static function assign(string $alg, string $className)
@@ -29,10 +30,11 @@ abstract class SignerFactory
 
     /**
      * @param string $alg
-     * @return Signer
+     *
      * @throws Exception
+     * @return Signer
      */
-    public static function build(string $alg) : Signer
+    public static function build(string $alg): Signer
     {
         if (!isset(self::$algMap[$alg])) {
             throw new Exception("Unsupported algorith: $alg");

@@ -2,12 +2,12 @@
 
 namespace Webdevcave\Jwt;
 
+use Exception;
 use Webdevcave\Jwt\Signer\Hmac\Sha\Sha256Signer;
 use Webdevcave\Jwt\Signer\Signer;
 use Webdevcave\Jwt\Validator\ExpValidator;
 use Webdevcave\Jwt\Validator\NbfValidator;
 use Webdevcave\Jwt\Validator\Validator;
-use Exception;
 
 class Token
 {
@@ -52,37 +52,63 @@ class Token
     private array $headerValidators = [];
 
     /**
-     * @return static
+     * Constructor.
      */
-    public static function create() : Token
+    public function __construct()
     {
-        return new static();
+        $this->withHeader('typ', 'JWT')
+            ->withSigner(self::getDefaultSigner())
+            ->assignValidator(new NbfValidator())
+            ->assignValidator(new ExpValidator());
     }
 
     /**
-     * @return Token
-     * @throws Exception
+     * @param Validator $validator
+     *
+     * @return $this
      */
-    public static function fromAuthorizationBearer() : Token
+    public function assignValidator(Validator $validator): Token
     {
-       $authorizationHeader = null;
+        $this->validators[$validator->validates()] = $validator;
+        return $this;
+    }
+
+    /**
+     * @return Signer
+     */
+    private static function getDefaultSigner(): Signer
+    {
+        $signer = self::DEFAULT_SIGNER;
+
+        return new $signer;
+    }
+
+    /**
+     * @throws Exception
+     * @return Token
+     */
+    public static function fromAuthorizationBearer(): Token
+    {
+        $authorizationHeader = null;
 
         if (isset($_SERVER['Authorization'])) {
             $authorizationHeader = trim($_SERVER['Authorization']);
-        } else if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
-            $authorizationHeader = trim($_SERVER['HTTP_AUTHORIZATION']);
         } else {
-            $headers =  getallheaders();
-            $headers = array_combine(
-                array_map(
-                    'ucwords',
-                    array_keys($headers)
-                ),
-                array_values($headers)
-            );
+            if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
+                $authorizationHeader = trim($_SERVER['HTTP_AUTHORIZATION']);
+            } else {
+                $headers = getallheaders();
+                $headers = array_combine(
+                    array_map(
+                        'ucwords',
+                        array_keys($headers)
+                    ),
+                    array_values($headers)
+                );
 
-            if (isset($headers['Authorization'])) {
-                $authorizationHeader = trim($headers['Authorization']);
+                if (isset($headers['Authorization'])) {
+                    $authorizationHeader = trim($headers['Authorization']);
+                }
             }
         }
 
@@ -100,23 +126,12 @@ class Token
     }
 
     /**
-     * @param $param
-     * @return Token
-     * @throws Exception
-     */
-    public static function fromQueryString($param = 'token') : Token
-    {
-        $token = isset($_GET[$param]) ? $_GET[$param] : null;
-
-        return static::fromString($token);
-    }
-
-    /**
      * @param string $token
-     * @return Token
+     *
      * @throws Exception
+     * @return Token
      */
-    public static function fromString(string $token) : Token
+    public static function fromString(string $token): Token
     {
         $parts = explode('.', $token);
 
@@ -140,20 +155,76 @@ class Token
     }
 
     /**
-     * @param Validator $validator
+     * @param string $encoded
+     *
+     * @return string
+     */
+    private static function decodeSection(string $encoded): string
+    {
+        return base64_decode(str_replace(['_', '-'], ['/', '+'], $encoded));
+    }
+
+    /**
+     * @param Signer $signer
+     *
      * @return $this
      */
-    public function assignValidator(Validator $validator) : Token
+    public function withSigner(Signer $signer): Token
     {
-        $this->validators[$validator->validates()] = $validator;
+        $this->signer = $signer;
+        return $this->withHeader('alg', $signer->algorithm());
+    }
+
+    /**
+     * @param string $index
+     * @param mixed  $value
+     *
+     * @return $this
+     */
+    public function withHeader(string $index, mixed $value): Token
+    {
+        $this->headers[$index] = $value;
         return $this;
     }
 
     /**
-     * @param Validator $validator
+     * @param string $signature
+     *
      * @return $this
      */
-    public function assignHeaderValidator(Validator $validator) : Token
+    public function setSignature(string $signature): Token
+    {
+        $this->signature = $signature;
+        return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public static function create(): Token
+    {
+        return new static();
+    }
+
+    /**
+     * @param $param
+     *
+     * @throws Exception
+     * @return Token
+     */
+    public static function fromQueryString($param = 'token'): Token
+    {
+        $token = isset($_GET[$param]) ? $_GET[$param] : null;
+
+        return static::fromString($token);
+    }
+
+    /**
+     * @param Validator $validator
+     *
+     * @return $this
+     */
+    public function assignHeaderValidator(Validator $validator): Token
     {
         $this->headerValidators[$validator->validates()] = $validator;
         return $this;
@@ -161,9 +232,10 @@ class Token
 
     /**
      * @param string|null $index
+     *
      * @return mixed
      */
-    public function getHeaders(string $index = null) : mixed
+    public function getHeaders(string $index = null): mixed
     {
         if (!$index) {
             return $this->headers;
@@ -173,10 +245,22 @@ class Token
     }
 
     /**
+     * @param array $headers
+     *
+     * @return $this
+     */
+    public function setHeaders(array $headers): Token
+    {
+        $this->headers = $headers;
+        return $this;
+    }
+
+    /**
      * @param string|null $index
+     *
      * @return mixed
      */
-    public function getPayload(string $index = null) : mixed
+    public function getPayload(string $index = null): mixed
     {
         if (!$index) {
             return $this->payload;
@@ -186,18 +270,30 @@ class Token
     }
 
     /**
+     * @param array $payload
+     *
+     * @return $this
+     */
+    public function setPayload(array $payload): Token
+    {
+        $this->payload = $payload;
+        return $this;
+    }
+
+    /**
      * @return string|null
      */
-    public function getLastValidationIssue() : ?string
+    public function getLastValidationIssue(): ?string
     {
         return $this->lastValidationIssue;
     }
 
     /**
      * @param string $index
+     *
      * @return $this
      */
-    public function remove(string $index) : Token
+    public function remove(string $index): Token
     {
         unset($this->payload[$index]);
         return $this;
@@ -205,64 +301,19 @@ class Token
 
     /**
      * @param string $index
+     *
      * @return $this
      */
-    public function removeHeader(string $index) : Token
+    public function removeHeader(string $index): Token
     {
         unset($this->headers[$index]);
         return $this;
     }
 
     /**
-     * @param array $headers
-     * @return $this
-     */
-    public function setHeaders(array $headers) : Token
-    {
-        $this->headers = $headers;
-        return $this;
-    }
-
-    /**
-     * @param array $payload
-     * @return $this
-     */
-    public function setPayload(array $payload) : Token
-    {
-        $this->payload = $payload;
-        return $this;
-    }
-
-    /**
-     * @param string $signature
-     * @return $this
-     */
-    public function setSignature(string $signature) : Token
-    {
-        $this->signature = $signature;
-        return $this;
-    }
-
-    /**
-     * @param mixed $secret
-     * @return $this
-     */
-    public function sign(mixed $secret) : Token
-    {
-        $this->signer->setSecret($secret);
-
-        $this->signature = $this->signer->sign(
-            self::encodeSection(json_encode($this->headers)),
-            self::encodeSection(json_encode($this->payload))
-        );
-
-        return $this;
-    }
-
-    /**
      * @return string
      */
-    public function toString() : string
+    public function toString(): string
     {
         $header = self::encodeSection(json_encode($this->headers));
         $payload = self::encodeSection(json_encode($this->payload));
@@ -272,10 +323,21 @@ class Token
     }
 
     /**
+     * @param string $value
+     *
+     * @return string
+     */
+    private static function encodeSection(string $value): string
+    {
+        return str_replace(['/', '+'], ['_', '-'], rtrim(base64_encode($value), '='));
+    }
+
+    /**
      * @param mixed $secret
+     *
      * @return bool
      */
-    public function validate(mixed $secret) : bool
+    public function validate(mixed $secret): bool
     {
         //Validate headers
         foreach ($this->headerValidators as $i => $validator) {
@@ -314,73 +376,31 @@ class Token
     }
 
     /**
-     * @param string $index
-     * @param mixed $value
+     * @param mixed $secret
+     *
      * @return $this
      */
-    public function with(string $index, mixed $value) : Token
+    public function sign(mixed $secret): Token
+    {
+        $this->signer->setSecret($secret);
+
+        $this->signature = $this->signer->sign(
+            self::encodeSection(json_encode($this->headers)),
+            self::encodeSection(json_encode($this->payload))
+        );
+
+        return $this;
+    }
+
+    /**
+     * @param string $index
+     * @param mixed  $value
+     *
+     * @return $this
+     */
+    public function with(string $index, mixed $value): Token
     {
         $this->payload[$index] = $value;
         return $this;
-    }
-
-    /**
-     * @param string $index
-     * @param mixed $value
-     * @return $this
-     */
-    public function withHeader(string $index, mixed $value) : Token
-    {
-        $this->headers[$index] = $value;
-        return $this;
-    }
-
-    /**
-     * @param Signer $signer
-     * @return $this
-     */
-    public function withSigner(Signer $signer) : Token
-    {
-        $this->signer = $signer;
-        return $this->withHeader('alg', $signer->algorithm());
-    }
-
-    /**
-     * Constructor.
-     */
-    public function __construct()
-    {
-        $this->withHeader('typ', 'JWT')
-            ->withSigner(self::getDefaultSigner())
-            ->assignValidator(new NbfValidator())
-            ->assignValidator(new ExpValidator());
-    }
-
-    /**
-     * @return Signer
-     */
-    private static function getDefaultSigner() : Signer
-    {
-        $signer = self::DEFAULT_SIGNER;
-
-        return new $signer;
-    }
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    private static function encodeSection(string $value) : string
-    {
-        return str_replace(['/','+'],['_','-'], rtrim(base64_encode($value), '='));
-    }
-
-    /**
-     * @param string $encoded
-     * @return string
-     */
-    private static function decodeSection(string $encoded) : string
-    {
-        return base64_decode(str_replace(['_','-'], ['/','+'], $encoded));
     }
 }

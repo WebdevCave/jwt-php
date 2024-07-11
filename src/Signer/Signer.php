@@ -28,7 +28,7 @@ abstract class Signer
     /**
      * @return string
      */
-    abstract public function algorithm() : string;
+    abstract public function algorithm(): string;
 
     /**
      * @param string $header

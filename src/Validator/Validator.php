@@ -9,14 +9,15 @@ abstract class Validator
      *
      * @return string
      */
-    abstract function validates() : string;
+    abstract function validates(): string;
 
     /**
      * Validates the field specified by validates().
      * Returns true when valid; false otherwise.
      *
      * @param mixed $value
+     *
      * @return bool
      */
-    abstract function validate(mixed $value) : bool;
+    abstract function validate(mixed $value): bool;
 }
