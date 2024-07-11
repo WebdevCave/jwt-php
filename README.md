@@ -5,7 +5,7 @@
 ## How to install
 
 ```
-composer require corviz/jwt
+composer require webdevcave/jwt
 ```
 
 ## Provided signers
