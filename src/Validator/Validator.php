@@ -9,7 +9,7 @@ abstract class Validator
      *
      * @return string
      */
-    abstract function validates(): string;
+    abstract public function validates(): string;
 
     /**
      * Validates the field specified by validates().
@@ -19,5 +19,5 @@ abstract class Validator
      *
      * @return bool
      */
-    abstract function validate(mixed $value): bool;
+    abstract public function validate(mixed $value): bool;
 }
