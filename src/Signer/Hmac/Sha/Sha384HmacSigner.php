@@ -4,7 +4,7 @@ namespace Webdevcave\Jwt\Signer\Hmac\Sha;
 
 use Webdevcave\Jwt\Signer\Hmac\HmacSigner;
 
-class Sha384Signer extends HmacSigner
+class Sha384HmacSigner extends HmacSigner
 {
     protected string $hmacAlg = 'sha384';
 
