@@ -1,12 +1,12 @@
 
 
 Code Coverage Report:
-  2024-07-15 17:57:58
+  2024-07-15 18:27:05
 
  Summary:
-  Classes: 78.95% (15/19)
-  Methods: 92.16% (47/51)
-  Lines:   83.67% (123/147)
+  Classes: 94.74% (18/19)
+  Methods: 98.04% (50/51)
+  Lines:   85.71% (126/147)
 
 Webdevcave\Jwt\Secrets\HsSecret
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
@@ -39,6 +39,10 @@ Webdevcave\Jwt\Validator\AudValidator
 Webdevcave\Jwt\Validator\EqualityValidator
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
 Webdevcave\Jwt\Validator\ExpValidator
-  Methods:  50.00% ( 1/ 2)   Lines:  50.00% (  1/  2)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
+Webdevcave\Jwt\Validator\IssValidator
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 Webdevcave\Jwt\Validator\NbfValidator
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
+Webdevcave\Jwt\Validator\SubValidator
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)

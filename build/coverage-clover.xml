@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1721066278">
-  <project timestamp="1721066278">
+<coverage generated="1721068025">
+  <project timestamp="1721068025">
     <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Secrets/HsSecret.php">
       <class name="Webdevcave\Jwt\Secrets\HsSecret" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
@@ -274,29 +274,29 @@
       <class name="Webdevcave\Jwt\Validator\EqualityValidator" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="15" type="stmt" count="2"/>
-      <line num="20" type="method" name="validate" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="22" type="stmt" count="2"/>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="15" type="stmt" count="4"/>
+      <line num="20" type="method" name="validate" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="22" type="stmt" count="4"/>
       <metrics loc="25" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/ExpValidator.php">
       <class name="Webdevcave\Jwt\Validator\ExpValidator" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="1" elements="4" coveredelements="2"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
       <line num="11" type="method" name="validates" visibility="public" complexity="1" crap="1" count="12"/>
       <line num="13" type="stmt" count="12"/>
-      <line num="19" type="method" name="validate" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <metrics loc="24" ncloc="18" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="1" elements="4" coveredelements="2"/>
+      <line num="19" type="method" name="validate" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <metrics loc="24" ncloc="18" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/IssValidator.php">
       <class name="Webdevcave\Jwt\Validator\IssValidator" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
-      <line num="10" type="method" name="validates" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="12" type="stmt" count="0"/>
-      <metrics loc="15" ncloc="12" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      <line num="10" type="method" name="validates" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <metrics loc="15" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/NbfValidator.php">
       <class name="Webdevcave\Jwt\Validator\NbfValidator" namespace="global">
@@ -310,11 +310,11 @@
     </file>
     <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/SubValidator.php">
       <class name="Webdevcave\Jwt\Validator\SubValidator" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
-      <line num="10" type="method" name="validates" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="12" type="stmt" count="0"/>
-      <metrics loc="15" ncloc="12" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      <line num="10" type="method" name="validates" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <metrics loc="15" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/Validator.php">
       <class name="Webdevcave\Jwt\Validator\Validator" namespace="global">
@@ -322,6 +322,6 @@
       </class>
       <metrics loc="24" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="21" loc="949" ncloc="641" classes="19" methods="51" coveredmethods="47" conditionals="0" coveredconditionals="0" statements="147" coveredstatements="123" elements="198" coveredelements="170"/>
+    <metrics files="21" loc="949" ncloc="641" classes="19" methods="51" coveredmethods="50" conditionals="0" coveredconditionals="0" statements="147" coveredstatements="126" elements="198" coveredelements="176"/>
   </project>
 </coverage>
