@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1721066278">
+  <project timestamp="1721066278">
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Secrets/HsSecret.php">
+      <class name="Webdevcave\Jwt\Secrets\HsSecret" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="13" type="stmt" count="7"/>
+      <metrics loc="15" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Secrets/RsSecret.php">
+      <class name="Webdevcave\Jwt\Secrets\RsSecret" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="18" type="stmt" count="5"/>
+      <metrics loc="20" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Secrets/Secret.php">
+      <metrics loc="9" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Signer/Hs/Hs256Signer.php">
+      <class name="Webdevcave\Jwt\Signer\Hs\Hs256Signer" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="12" type="method" name="algorithm" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="14" type="stmt" count="12"/>
+      <metrics loc="16" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Signer/Hs/Hs384Signer.php">
+      <class name="Webdevcave\Jwt\Signer\Hs\Hs384Signer" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="12" type="method" name="algorithm" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <metrics loc="16" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Signer/Hs/Hs512Signer.php">
+      <class name="Webdevcave\Jwt\Signer\Hs\Hs512Signer" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="12" type="method" name="algorithm" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <metrics loc="16" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Signer/Hs/HsSigner.php">
+      <class name="Webdevcave\Jwt\Signer\Hs\HsSigner" namespace="global">
+        <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
+      </class>
+      <line num="22" type="method" name="sign" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="25" type="stmt" count="7"/>
+      <line num="27" type="stmt" count="7"/>
+      <line num="37" type="method" name="verify" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="39" type="stmt" count="3"/>
+      <line num="47" type="method" name="validateSecret" visibility="protected" complexity="1" crap="1" count="8"/>
+      <line num="49" type="stmt" count="8"/>
+      <metrics loc="52" ncloc="30" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Signer/Rs/Rs256Signer.php">
+      <class name="Webdevcave\Jwt\Signer\Rs\Rs256Signer" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="15" type="method" name="algorithm" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <metrics loc="20" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Signer/Rs/Rs384Signer.php">
+      <class name="Webdevcave\Jwt\Signer\Rs\Rs384Signer" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="16" type="method" name="algorithm" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <metrics loc="21" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Signer/Rs/Rs512Signer.php">
+      <class name="Webdevcave\Jwt\Signer\Rs\Rs512Signer" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="16" type="method" name="algorithm" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <metrics loc="21" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Signer/Rs/RsSigner.php">
+      <class name="Webdevcave\Jwt\Signer\Rs\RsSigner" namespace="global">
+        <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="19" coveredelements="19"/>
+      </class>
+      <line num="23" type="method" name="sign" visibility="public" complexity="2" crap="2" count="4"/>
+      <line num="26" type="stmt" count="4"/>
+      <line num="27" type="stmt" count="4"/>
+      <line num="28" type="stmt" count="4"/>
+      <line num="29" type="stmt" count="4"/>
+      <line num="30" type="stmt" count="4"/>
+      <line num="32" type="stmt" count="4"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="3"/>
+      <line num="46" type="method" name="verify" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="49" type="stmt" count="3"/>
+      <line num="51" type="stmt" count="3"/>
+      <line num="52" type="stmt" count="3"/>
+      <line num="53" type="stmt" count="3"/>
+      <line num="54" type="stmt" count="3"/>
+      <line num="55" type="stmt" count="3"/>
+      <line num="56" type="stmt" count="3"/>
+      <line num="64" type="method" name="validateSecret" visibility="protected" complexity="1" crap="1" count="4"/>
+      <line num="66" type="stmt" count="4"/>
+      <metrics loc="69" ncloc="46" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="19" coveredelements="19"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Signer/Signer.php">
+      <class name="Webdevcave\Jwt\Signer\Signer" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+      </class>
+      <line num="23" type="method" name="getSecret" visibility="public" complexity="1" crap="1" count="11"/>
+      <line num="25" type="stmt" count="11"/>
+      <line num="33" type="method" name="setSecret" visibility="public" complexity="2" crap="2" count="12"/>
+      <line num="35" type="stmt" count="12"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="11"/>
+      <metrics loc="66" ncloc="34" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/SignerFactory.php">
+      <class name="Webdevcave\Jwt\SignerFactory" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="34" type="method" name="assign" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="45" type="method" name="build" visibility="public" complexity="2" crap="2" count="13"/>
+      <line num="47" type="stmt" count="13"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="12"/>
+      <line num="52" type="stmt" count="12"/>
+      <metrics loc="55" ncloc="40" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Token.php">
+      <class name="Webdevcave\Jwt\Token" namespace="global">
+        <metrics complexity="46" methods="24" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="101" coveredstatements="80" elements="125" coveredelements="103"/>
+      </class>
+      <line num="58" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="60" type="stmt" count="12"/>
+      <line num="62" type="stmt" count="12"/>
+      <line num="63" type="stmt" count="12"/>
+      <line num="64" type="stmt" count="12"/>
+      <line num="65" type="stmt" count="12"/>
+      <line num="66" type="stmt" count="12"/>
+      <line num="67" type="stmt" count="12"/>
+      <line num="75" type="method" name="assignValidator" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="77" type="stmt" count="12"/>
+      <line num="78" type="stmt" count="12"/>
+      <line num="84" type="method" name="getDefaultSigner" visibility="private" complexity="1" crap="1" count="12"/>
+      <line num="86" type="stmt" count="12"/>
+      <line num="88" type="stmt" count="12"/>
+      <line num="95" type="method" name="fromAuthorizationBearer" visibility="public" complexity="6" crap="42" count="0"/>
+      <line num="97" type="stmt" count="0"/>
+      <line num="99" type="stmt" count="0"/>
+      <line num="100" type="stmt" count="0"/>
+      <line num="102" type="stmt" count="0"/>
+      <line num="103" type="stmt" count="0"/>
+      <line num="105" type="stmt" count="0"/>
+      <line num="106" type="stmt" count="0"/>
+      <line num="107" type="stmt" count="0"/>
+      <line num="108" type="stmt" count="0"/>
+      <line num="109" type="stmt" count="0"/>
+      <line num="110" type="stmt" count="0"/>
+      <line num="111" type="stmt" count="0"/>
+      <line num="112" type="stmt" count="0"/>
+      <line num="114" type="stmt" count="0"/>
+      <line num="115" type="stmt" count="0"/>
+      <line num="120" type="stmt" count="0"/>
+      <line num="121" type="stmt" count="0"/>
+      <line num="125" type="stmt" count="0"/>
+      <line num="126" type="stmt" count="0"/>
+      <line num="127" type="stmt" count="0"/>
+      <line num="130" type="stmt" count="0"/>
+      <line num="139" type="method" name="fromString" visibility="public" complexity="6" crap="6" count="9"/>
+      <line num="141" type="stmt" count="9"/>
+      <line num="143" type="stmt" count="9"/>
+      <line num="144" type="stmt" count="1"/>
+      <line num="147" type="stmt" count="8"/>
+      <line num="148" type="stmt" count="8"/>
+      <line num="149" type="stmt" count="8"/>
+      <line num="151" type="stmt" count="8"/>
+      <line num="152" type="stmt" count="1"/>
+      <line num="155" type="stmt" count="7"/>
+      <line num="156" type="stmt" count="7"/>
+      <line num="157" type="stmt" count="7"/>
+      <line num="158" type="stmt" count="7"/>
+      <line num="159" type="stmt" count="7"/>
+      <line num="167" type="method" name="decodeSection" visibility="private" complexity="1" crap="1" count="8"/>
+      <line num="169" type="stmt" count="8"/>
+      <line num="177" type="method" name="withSigner" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="179" type="stmt" count="12"/>
+      <line num="180" type="stmt" count="12"/>
+      <line num="189" type="method" name="withHeader" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="191" type="stmt" count="12"/>
+      <line num="192" type="stmt" count="12"/>
+      <line num="200" type="method" name="setSignature" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="202" type="stmt" count="7"/>
+      <line num="203" type="stmt" count="7"/>
+      <line num="209" type="method" name="create" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="211" type="stmt" count="12"/>
+      <line num="220" type="method" name="fromQueryString" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="222" type="stmt" count="1"/>
+      <line num="224" type="stmt" count="1"/>
+      <line num="232" type="method" name="assignHeaderValidator" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="234" type="stmt" count="1"/>
+      <line num="235" type="stmt" count="1"/>
+      <line num="243" type="method" name="getHeaders" visibility="public" complexity="3" crap="3" count="8"/>
+      <line num="245" type="stmt" count="8"/>
+      <line num="246" type="stmt" count="1"/>
+      <line num="249" type="stmt" count="7"/>
+      <line num="257" type="method" name="setHeaders" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="259" type="stmt" count="7"/>
+      <line num="260" type="stmt" count="7"/>
+      <line num="268" type="method" name="getPayload" visibility="public" complexity="3" crap="3" count="8"/>
+      <line num="270" type="stmt" count="8"/>
+      <line num="271" type="stmt" count="1"/>
+      <line num="274" type="stmt" count="7"/>
+      <line num="282" type="method" name="setPayload" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="284" type="stmt" count="7"/>
+      <line num="285" type="stmt" count="7"/>
+      <line num="291" type="method" name="getLastValidationIssue" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="293" type="stmt" count="2"/>
+      <line num="301" type="method" name="remove" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="303" type="stmt" count="1"/>
+      <line num="304" type="stmt" count="1"/>
+      <line num="312" type="method" name="removeHeader" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="314" type="stmt" count="2"/>
+      <line num="315" type="stmt" count="2"/>
+      <line num="321" type="method" name="toString" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="323" type="stmt" count="8"/>
+      <line num="324" type="stmt" count="8"/>
+      <line num="325" type="stmt" count="8"/>
+      <line num="327" type="stmt" count="8"/>
+      <line num="335" type="method" name="encodeSection" visibility="private" complexity="1" crap="1" count="10"/>
+      <line num="337" type="stmt" count="10"/>
+      <line num="345" type="method" name="validate" visibility="public" complexity="8" crap="8" count="8"/>
+      <line num="348" type="stmt" count="8"/>
+      <line num="351" type="stmt" count="1"/>
+      <line num="352" type="stmt" count="1"/>
+      <line num="353" type="stmt" count="1"/>
+      <line num="358" type="stmt" count="7"/>
+      <line num="361" type="stmt" count="7"/>
+      <line num="362" type="stmt" count="1"/>
+      <line num="363" type="stmt" count="1"/>
+      <line num="368" type="stmt" count="6"/>
+      <line num="369" type="stmt" count="6"/>
+      <line num="371" type="stmt" count="6"/>
+      <line num="372" type="stmt" count="6"/>
+      <line num="374" type="stmt" count="6"/>
+      <line num="376" type="stmt" count="6"/>
+      <line num="377" type="stmt" count="6"/>
+      <line num="380" type="stmt" count="6"/>
+      <line num="388" type="method" name="sign" visibility="public" complexity="1" crap="1" count="10"/>
+      <line num="390" type="stmt" count="10"/>
+      <line num="392" type="stmt" count="10"/>
+      <line num="393" type="stmt" count="10"/>
+      <line num="394" type="stmt" count="10"/>
+      <line num="395" type="stmt" count="10"/>
+      <line num="397" type="stmt" count="10"/>
+      <line num="406" type="method" name="with" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="408" type="stmt" count="12"/>
+      <line num="409" type="stmt" count="12"/>
+      <metrics loc="412" ncloc="270" classes="1" methods="24" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="101" coveredstatements="80" elements="125" coveredelements="103"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/AudValidator.php">
+      <class name="Webdevcave\Jwt\Validator\AudValidator" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="10" type="method" name="validates" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="12" type="stmt" count="2"/>
+      <metrics loc="15" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/EqualityValidator.php">
+      <class name="Webdevcave\Jwt\Validator\EqualityValidator" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="15" type="stmt" count="2"/>
+      <line num="20" type="method" name="validate" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="22" type="stmt" count="2"/>
+      <metrics loc="25" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/ExpValidator.php">
+      <class name="Webdevcave\Jwt\Validator\ExpValidator" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="1" elements="4" coveredelements="2"/>
+      </class>
+      <line num="11" type="method" name="validates" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="13" type="stmt" count="12"/>
+      <line num="19" type="method" name="validate" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <metrics loc="24" ncloc="18" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="1" elements="4" coveredelements="2"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/IssValidator.php">
+      <class name="Webdevcave\Jwt\Validator\IssValidator" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </class>
+      <line num="10" type="method" name="validates" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="12" type="stmt" count="0"/>
+      <metrics loc="15" ncloc="12" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/NbfValidator.php">
+      <class name="Webdevcave\Jwt\Validator\NbfValidator" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </class>
+      <line num="11" type="method" name="validates" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="13" type="stmt" count="12"/>
+      <line num="19" type="method" name="validate" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="21" type="stmt" count="7"/>
+      <metrics loc="23" ncloc="17" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/SubValidator.php">
+      <class name="Webdevcave\Jwt\Validator\SubValidator" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </class>
+      <line num="10" type="method" name="validates" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="12" type="stmt" count="0"/>
+      <metrics loc="15" ncloc="12" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+    </file>
+    <file name="/home/ana/Documentos/Exercicios/jwt/jwt/src/Validator/Validator.php">
+      <class name="Webdevcave\Jwt\Validator\Validator" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="24" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <metrics files="21" loc="949" ncloc="641" classes="19" methods="51" coveredmethods="47" conditionals="0" coveredconditionals="0" statements="147" coveredstatements="123" elements="198" coveredelements="170"/>
+  </project>
+</coverage>
