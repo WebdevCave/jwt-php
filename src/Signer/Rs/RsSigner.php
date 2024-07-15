@@ -1,13 +1,13 @@
 <?php
 
-namespace Webdevcave\Jwt\Signer\OpenSsl;
+namespace Webdevcave\Jwt\Signer\Rs;
 
 use RuntimeException;
-use Webdevcave\Jwt\Secrets\OpenSslSecret;
+use Webdevcave\Jwt\Secrets\RsSecret;
 use Webdevcave\Jwt\Secrets\Secret;
 use Webdevcave\Jwt\Signer\Signer;
 
-abstract class OpenSslSigner extends Signer
+abstract class RsSigner extends Signer
 {
     /**
      * @var string
@@ -22,7 +22,7 @@ abstract class OpenSslSigner extends Signer
      */
     public function sign(string $header, string $payload): mixed
     {
-        /* @var $secret OpenSslSecret */
+        /* @var $secret RsSecret */
         $secret = $this->getSecret();
         $signature = null;
         $signed = openssl_sign(
@@ -45,7 +45,7 @@ abstract class OpenSslSigner extends Signer
      */
     public function verify(string $header, string $payload, string $signature): bool
     {
-        /* @var $secret OpenSslSecret */
+        /* @var $secret RsSecret */
         $secret = $this->getSecret();
 
         return openssl_verify(
@@ -63,6 +63,6 @@ abstract class OpenSslSigner extends Signer
      */
     protected function validateSecret(Secret $secret): bool
     {
-        return $secret instanceof OpenSslSecret;
+        return $secret instanceof RsSecret;
     }
 }

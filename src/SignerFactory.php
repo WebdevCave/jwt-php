@@ -13,12 +13,12 @@ abstract class SignerFactory
      * @var string[]
      */
     private static array $algorithmMap = [
-        'HS256' => Hmac\Sha256HmacSigner::class,
-        'HS384' => Hmac\Sha384HmacSigner::class,
-        'HS512' => Hmac\Sha512HmacSigner::class,
-        'RS256' => OpenSsl\Sha256OpenSslSigner::class,
-        'RS384' => OpenSsl\Sha384OpenSslSigner::class,
-        'RS512' => OpenSsl\Sha512OpenSslSigner::class,
+        'HS256' => Signer\Hs\Hs256Signer::class,
+        'HS384' => Signer\Hs\Hs384Signer::class,
+        'HS512' => Signer\Hs\Hs512Signer::class,
+        'RS256' => Signer\Rs\Rs256Signer::class,
+        'RS384' => Signer\Rs\Rs384Signer::class,
+        'RS512' => Signer\Rs\Rs512Signer::class,
     ];
 
     /**

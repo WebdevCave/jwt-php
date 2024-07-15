@@ -1,12 +1,12 @@
 <?php
 
-namespace Webdevcave\Jwt\Signer\Hmac;
+namespace Webdevcave\Jwt\Signer\Hs;
 
-use Webdevcave\Jwt\Secrets\HmacSecret;
+use Webdevcave\Jwt\Secrets\HsSecret;
 use Webdevcave\Jwt\Secrets\Secret;
 use Webdevcave\Jwt\Signer\Signer;
 
-abstract class HmacSigner extends Signer
+abstract class HsSigner extends Signer
 {
     /**
      * @var string
@@ -21,7 +21,7 @@ abstract class HmacSigner extends Signer
      */
     public function sign(string $header, string $payload): mixed
     {
-        /* @var $secret HmacSecret */
+        /* @var $secret HsSecret */
         $secret = $this->getSecret();
 
         return hash_hmac($this->hmacAlg, "$header.$payload", $secret->key, true);
@@ -46,6 +46,6 @@ abstract class HmacSigner extends Signer
      */
     protected function validateSecret(Secret $secret): bool
     {
-        return $secret instanceof HmacSecret;
+        return $secret instanceof HsSecret;
     }
 }

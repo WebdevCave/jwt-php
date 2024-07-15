@@ -1,10 +1,8 @@
 <?php
 
-namespace Webdevcave\Jwt\Signer\OpenSsl\Sha;
+namespace Webdevcave\Jwt\Signer\Rs;
 
-use Webdevcave\Jwt\Signer\OpenSsl\OpenSslSigner;
-
-class Sha384OpenSslSigner extends OpenSslSigner
+class Rs384Signer extends RsSigner
 {
 
     /**

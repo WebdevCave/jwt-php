@@ -2,7 +2,7 @@
 
 namespace Webdevcave\Jwt\Secrets;
 
-class HmacSecret implements Secret
+class HsSecret implements Secret
 {
     /**
      * @param string $key

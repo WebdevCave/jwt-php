@@ -4,7 +4,7 @@ namespace Webdevcave\Jwt;
 
 use Exception;
 use Webdevcave\Jwt\Secrets\Secret;
-use Webdevcave\Jwt\Signer\Hmac\Sha\Sha256HmacSigner;
+use Webdevcave\Jwt\Signer\Hs\Hs256Signer;
 use Webdevcave\Jwt\Signer\Signer;
 use Webdevcave\Jwt\Validator\ExpValidator;
 use Webdevcave\Jwt\Validator\NbfValidator;
@@ -15,7 +15,7 @@ class Token
     /**
      *
      */
-    public const DEFAULT_SIGNER = Sha256HmacSigner::class;
+    public const DEFAULT_SIGNER = Hs256Signer::class;
 
     /**
      * @var array

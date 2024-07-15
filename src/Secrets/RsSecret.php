@@ -5,7 +5,7 @@ namespace Webdevcave\Jwt\Secrets;
 use OpenSSLAsymmetricKey;
 use OpenSSLCertificate;
 
-class OpenSslSecret implements Secret
+class RsSecret implements Secret
 {
     /**
      * @param OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $privateKey

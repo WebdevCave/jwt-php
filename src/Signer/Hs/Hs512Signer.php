@@ -1,10 +1,8 @@
 <?php
 
-namespace Webdevcave\Jwt\Signer\Hmac\Sha;
+namespace Webdevcave\Jwt\Signer\Hs;
 
-use Webdevcave\Jwt\Signer\Hmac\HmacSigner;
-
-class Sha512HmacSigner extends HmacSigner
+class Hs512Signer extends HsSigner
 {
     protected string $hmacAlg = 'sha512';
 
