@@ -18,6 +18,6 @@ class NbfValidator extends Validator
      */
     function validate(mixed $value): bool
     {
-        return $value < time();
+        return $value <= time();
     }
 }
