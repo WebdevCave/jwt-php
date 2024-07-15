@@ -4,7 +4,6 @@ namespace Webdevcave\Jwt\Signer\Rs;
 
 class Rs384Signer extends RsSigner
 {
-
     /**
      * @var int
      */

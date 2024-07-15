@@ -4,11 +4,10 @@ namespace Webdevcave\Jwt\Validator;
 
 class NbfValidator extends Validator
 {
-
     /**
      * @inheritDoc
      */
-    function validates(): string
+    public function validates(): string
     {
         return 'nbf';
     }
@@ -16,7 +15,7 @@ class NbfValidator extends Validator
     /**
      * @inheritDoc
      */
-    function validate(mixed $value): bool
+    public function validate(mixed $value): bool
     {
         return $value <= time();
     }

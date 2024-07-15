@@ -5,7 +5,7 @@ namespace Webdevcave\Jwt\Validator;
 abstract class Validator
 {
     /**
-     * Must return the validated field name;
+     * Must return the validated field name;.
      *
      * @return string
      */

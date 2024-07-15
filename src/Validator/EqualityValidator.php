@@ -2,8 +2,6 @@
 
 namespace Webdevcave\Jwt\Validator;
 
-use Webdevcave\Jwt\Validator\Validator;
-
 abstract class EqualityValidator extends Validator
 {
     /**
