@@ -26,11 +26,14 @@ abstract class RsSigner extends Signer
         $secret = $this->getSecret();
         $signature = null;
         $signed = openssl_sign(
-            "$header.$payload", $signature, $secret->privateKey, $this->openSslAlgorithm
+            "$header.$payload",
+            $signature,
+            $secret->privateKey,
+            $this->openSslAlgorithm
         );
 
         if (!$signed) {
-            throw new RuntimeException("Failed to create signature");
+            throw new RuntimeException('Failed to create signature');
         }
 
         return $signature;

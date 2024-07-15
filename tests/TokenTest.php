@@ -4,6 +4,7 @@ namespace Webdevcave\Jwt\Tests;
 
 use Exception;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Webdevcave\Jwt\Secrets\HsSecret;
 use Webdevcave\Jwt\Secrets\RsSecret;
 use Webdevcave\Jwt\Signer\Hs\Hs256Signer;
@@ -17,7 +18,6 @@ use Webdevcave\Jwt\Signer\Rs\RsSigner;
 use Webdevcave\Jwt\Signer\Signer;
 use Webdevcave\Jwt\SignerFactory;
 use Webdevcave\Jwt\Token;
-use PHPUnit\Framework\TestCase;
 use Webdevcave\Jwt\Validator\AudValidator;
 use Webdevcave\Jwt\Validator\EqualityValidator;
 use Webdevcave\Jwt\Validator\ExpValidator;

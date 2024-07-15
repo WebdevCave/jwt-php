@@ -12,9 +12,6 @@ use Webdevcave\Jwt\Validator\Validator;
 
 class Token
 {
-    /**
-     *
-     */
     public const DEFAULT_SIGNER = Hs256Signer::class;
 
     /**
@@ -75,6 +72,7 @@ class Token
     public function assignValidator(Validator $validator): Token
     {
         $this->validators[$validator->validates()] = $validator;
+
         return $this;
     }
 
@@ -85,11 +83,12 @@ class Token
     {
         $signer = self::DEFAULT_SIGNER;
 
-        return new $signer;
+        return new $signer();
     }
 
     /**
      * @throws Exception
+     *
      * @return Token
      */
     public static function fromAuthorizationBearer(): Token
@@ -121,7 +120,6 @@ class Token
             throw new Exception('Authorization header is not set');
         }
 
-
         $matches = [];
         if (!preg_match('/Bearer\s((.*)\.(.*)\.(.*))/', $authorizationHeader, $matches)) {
             throw new Exception('Invalid "Authorization" header value');
@@ -134,6 +132,7 @@ class Token
      * @param string $token
      *
      * @throws Exception
+     *
      * @return Token
      */
     public static function fromString(string $token): Token
@@ -177,6 +176,7 @@ class Token
     public function withSigner(Signer $signer): Token
     {
         $this->signer = $signer;
+
         return $this->withHeader('alg', $signer->algorithm());
     }
 
@@ -189,6 +189,7 @@ class Token
     public function withHeader(string $index, mixed $value): Token
     {
         $this->headers[$index] = $value;
+
         return $this;
     }
 
@@ -200,6 +201,7 @@ class Token
     public function setSignature(string $signature): Token
     {
         $this->signature = $signature;
+
         return $this;
     }
 
@@ -215,6 +217,7 @@ class Token
      * @param $param
      *
      * @throws Exception
+     *
      * @return Token
      */
     public static function fromQueryString($param = 'token'): Token
@@ -232,6 +235,7 @@ class Token
     public function assignHeaderValidator(Validator $validator): Token
     {
         $this->headerValidators[$validator->validates()] = $validator;
+
         return $this;
     }
 
@@ -257,6 +261,7 @@ class Token
     public function setHeaders(array $headers): Token
     {
         $this->headers = $headers;
+
         return $this;
     }
 
@@ -282,6 +287,7 @@ class Token
     public function setPayload(array $payload): Token
     {
         $this->payload = $payload;
+
         return $this;
     }
 
@@ -301,6 +307,7 @@ class Token
     public function remove(string $index): Token
     {
         unset($this->payload[$index]);
+
         return $this;
     }
 
@@ -312,6 +319,7 @@ class Token
     public function removeHeader(string $index): Token
     {
         unset($this->headers[$index]);
+
         return $this;
     }
 
@@ -350,6 +358,7 @@ class Token
 
             if (isset($this->headers[$i]) && !$validator->validate($this->headers[$i])) {
                 $this->lastValidationIssue = "Header '$i' value is invalid.";
+
                 return false;
             }
         }
@@ -360,6 +369,7 @@ class Token
 
             if (isset($this->payload[$i]) && !$validator->validate($this->payload[$i])) {
                 $this->lastValidationIssue = "Payload field '$i' value is invalid.";
+
                 return false;
             }
         }
@@ -374,7 +384,7 @@ class Token
         $valid = $signer->verify($headers, $payload, $this->signature);
 
         if (!$valid) {
-            $this->lastValidationIssue = "Token signature is invalid.";
+            $this->lastValidationIssue = 'Token signature is invalid.';
         }
 
         return $valid;
@@ -406,6 +416,7 @@ class Token
     public function with(string $index, mixed $value): Token
     {
         $this->payload[$index] = $value;
+
         return $this;
     }
 }

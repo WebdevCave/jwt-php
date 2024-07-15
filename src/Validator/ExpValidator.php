@@ -4,11 +4,10 @@ namespace Webdevcave\Jwt\Validator;
 
 class ExpValidator extends Validator
 {
-
     /**
      * @inheritDoc
      */
-    function validates(): string
+    public function validates(): string
     {
         return 'exp';
     }
@@ -16,7 +15,7 @@ class ExpValidator extends Validator
     /**
      * @inheritDoc
      */
-    function validate(mixed $value): bool
+    public function validate(mixed $value): bool
     {
         return $value > time();
     }

@@ -33,7 +33,7 @@ abstract class Signer
     public function setSecret(Secret $secret): void
     {
         if (!$this->validateSecret($secret)) {
-            throw new InvalidArgumentException("Invalid secret provided");
+            throw new InvalidArgumentException('Invalid secret provided');
         }
 
         $this->secret = $secret;

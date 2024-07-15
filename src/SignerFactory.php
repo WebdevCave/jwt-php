@@ -40,6 +40,7 @@ abstract class SignerFactory
      * @param string $algorithm
      *
      * @throws Exception
+     *
      * @return Signer
      */
     public static function build(string $algorithm): Signer
@@ -49,6 +50,7 @@ abstract class SignerFactory
         }
 
         $className = self::$algorithmMap[$algorithm];
-        return new $className;
+
+        return new $className();
     }
 }

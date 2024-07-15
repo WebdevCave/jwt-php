@@ -4,6 +4,7 @@ namespace Webdevcave\Jwt\Tests;
 
 use Exception;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Webdevcave\Jwt\Signer\Hs\Hs256Signer;
 use Webdevcave\Jwt\Signer\Hs\Hs384Signer;
 use Webdevcave\Jwt\Signer\Hs\Hs512Signer;
@@ -11,7 +12,6 @@ use Webdevcave\Jwt\Signer\Rs\Rs256Signer;
 use Webdevcave\Jwt\Signer\Rs\Rs384Signer;
 use Webdevcave\Jwt\Signer\Rs\Rs512Signer;
 use Webdevcave\Jwt\SignerFactory;
-use PHPUnit\Framework\TestCase;
 use Webdevcave\Jwt\Tests\CustomSigner\MyCustomSigner;
 
 #[CoversClass(SignerFactory::class)]
