@@ -1,6 +1,7 @@
 # JWT
 
 [![codecov](https://codecov.io/gh/WebdevCave/jwt/graph/badge.svg?token=U0OXfWrDJl)](https://codecov.io/gh/WebdevCave/jwt)
+[![StyleCI](https://github.styleci.io/repos/827326764/shield?branch=main)](https://github.styleci.io/repos/827326764?branch=main)
 
 <div style="text-align: center">
 <a href="https://jwt.io/" target="_blank">
