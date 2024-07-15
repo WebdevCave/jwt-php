@@ -1,5 +1,7 @@
 # JWT
 
+[![codecov](https://codecov.io/gh/WebdevCave/jwt/graph/badge.svg?token=U0OXfWrDJl)](https://codecov.io/gh/WebdevCave/jwt)
+
 ![JWT Logo](https://jwt.io/img/logo-asset.svg)
 
 ## How to install
