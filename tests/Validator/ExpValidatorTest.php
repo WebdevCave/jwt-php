@@ -2,6 +2,7 @@
 
 namespace Webdevcave\Jwt\Tests;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Webdevcave\Jwt\Validator\ExpValidator;
 
@@ -11,8 +12,7 @@ class ExpValidatorTest extends TestCase
     public function testValidate()
     {
         $validator = new ExpValidator();
-        /*$this->assertTrue($validator->validate(time() + 100));
-        $this->assertFalse($validator->validate(time() - 100));*/
+        $this->assertTrue($validator->validate(time() + 100));
         $this->assertFalse($validator->validate(time() - 100));
     }
 }
