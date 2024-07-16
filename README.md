@@ -1,6 +1,10 @@
 # JWT
 
 [![codecov](https://codecov.io/gh/WebdevCave/jwt/graph/badge.svg?token=U0OXfWrDJl)](https://codecov.io/gh/WebdevCave/jwt)
+[![Latest Stable Version](https://poser.pugx.org/webdevcave/jwt/v/stable?format=flat-square)](https://packagist.org/packages/webdevcave/jwt)
+[![Latest Unstable Version](https://poser.pugx.org/webdevcave/jwt/v/unstable?format=flat-square)](https://packagist.org/packages/webdevcave/jwt)
+[![Total Downloads](https://poser.pugx.org/webdevcave/jwt/downloads?format=flat-square)](https://packagist.org/packages/webdevcave/jwt)
+[![License](https://poser.pugx.org/webdevcave/jwt/license?format=flat-square)](https://packagist.org/packages/webdevcave/jwt)
 [![StyleCI](https://github.styleci.io/repos/827326764/shield?branch=main)](https://github.styleci.io/repos/827326764?branch=main)
 
 <div style="text-align: center">
