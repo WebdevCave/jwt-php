@@ -266,7 +266,7 @@ class TokenTest extends TestCase
     public function testFromAuthorizationBearer()
     {
         $secret = new HsSecret('secret');
-        $token = 'Bearer ' . Token::create()
+        $token = 'Bearer '.Token::create()
             ->withSigner(SignerFactory::build('HS256'))
             ->sign($secret)
             ->toString();
