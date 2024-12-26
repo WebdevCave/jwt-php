@@ -2,7 +2,7 @@
 
 namespace Webdevcave\Jwt;
 
-use Exception;
+use Webdevcave\Jwt\Exception\InvalidAlgException;
 use Webdevcave\Jwt\Signer\Hs\Hs256Signer;
 use Webdevcave\Jwt\Signer\Hs\Hs384Signer;
 use Webdevcave\Jwt\Signer\Hs\Hs512Signer;
@@ -39,14 +39,14 @@ abstract class SignerFactory
     /**
      * @param string $algorithm
      *
-     * @throws Exception
+     * @throws InvalidAlgException
      *
      * @return Signer
      */
     public static function build(string $algorithm): Signer
     {
         if (!isset(self::$algorithmMap[$algorithm])) {
-            throw new Exception("Algorithm not assigned: $algorithm. See SignerFactory::assign()");
+            throw new InvalidAlgException("Algorithm not assigned: $algorithm. See SignerFactory::assign()");
         }
 
         $className = self::$algorithmMap[$algorithm];

@@ -2,7 +2,9 @@
 
 namespace Webdevcave\Jwt;
 
-use Exception;
+use Webdevcave\Jwt\Exception\InvalidAlgException;
+use Webdevcave\Jwt\Exception\InvalidTokenException;
+use Webdevcave\Jwt\Exception\TokenNotPresentException;
 use Webdevcave\Jwt\Secrets\Secret;
 use Webdevcave\Jwt\Signer\Hs\Hs256Signer;
 use Webdevcave\Jwt\Signer\Signer;
@@ -87,7 +89,9 @@ class Token
     }
 
     /**
-     * @throws Exception
+     * @throws InvalidAlgException
+     * @throws InvalidTokenException
+     * @throws TokenNotPresentException
      *
      * @return Token
      */
@@ -117,12 +121,12 @@ class Token
         }
 
         if (!$authorizationHeader) {
-            throw new Exception('Authorization header is not set');
+            throw new TokenNotPresentException('Authorization header is not set');
         }
 
         $matches = [];
         if (!preg_match('/Bearer\s((.*)\.(.*)\.(.*))/', $authorizationHeader, $matches)) {
-            throw new Exception('Invalid "Authorization" header value');
+            throw new InvalidTokenException('Invalid "Authorization" header value');
         }
 
         return static::fromString($matches[1]);
@@ -131,7 +135,8 @@ class Token
     /**
      * @param string $token
      *
-     * @throws Exception
+     * @throws InvalidAlgException
+     * @throws InvalidTokenException
      *
      * @return Token
      */
@@ -140,7 +145,7 @@ class Token
         $parts = explode('.', $token);
 
         if (count($parts) != 3) {
-            throw new Exception('Invalid token: JWT token must have 3 sections separated by "."');
+            throw new InvalidTokenException('Invalid token: JWT token must have 3 sections separated by "."');
         }
 
         $headers = json_decode(self::decodeSection($parts[0]), true) ?: [];
@@ -148,7 +153,7 @@ class Token
         $signature = self::decodeSection($parts[2]) ?: '';
 
         if (empty($headers['alg'])) {
-            throw new Exception('"alg" JWT header must not be empty');
+            throw new InvalidTokenException('"alg" JWT header must not be empty');
         }
 
         return static::create()
@@ -214,15 +219,19 @@ class Token
     }
 
     /**
-     * @param $param
+     * @param string $param
      *
-     * @throws Exception
+     * @throws TokenNotPresentException
      *
      * @return Token
      */
-    public static function fromQueryString($param = 'token'): Token
+    public static function fromQueryString(string $param = 'token'): Token
     {
-        $token = isset($_GET[$param]) ? $_GET[$param] : null;
+        $token = $_GET[$param] ?? null;
+
+        if (is_null($token)) {
+            throw new TokenNotPresentException('Token parameter is not set');
+        }
 
         return static::fromString($token);
     }
