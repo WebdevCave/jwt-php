@@ -262,4 +262,25 @@ class TokenTest extends TestCase
         $tokenObject = Token::fromQueryString();
         $this->assertInstanceOf(Token::class, $tokenObject);
     }
+
+    public function testFromAuthorizationBearer()
+    {
+        $secret = new HsSecret('secret');
+        $token = 'Bearer ' . Token::create()
+            ->withSigner(SignerFactory::build('HS256'))
+            ->sign($secret)
+            ->toString();
+
+        //Possibility 1:
+        $_SERVER['Authorization'] = $token;
+        $tokenObject = Token::fromAuthorizationBearer();
+        $this->assertInstanceOf(Token::class, $tokenObject);
+        unset($_SERVER['Authorization']);
+
+        //Possibility 2:
+        $_SERVER['HTTP_AUTHORIZATION'] = $token;
+        $tokenObject = Token::fromAuthorizationBearer();
+        $this->assertInstanceOf(Token::class, $tokenObject);
+        unset($_SERVER['HTTP_AUTHORIZATION']);
+    }
 }
