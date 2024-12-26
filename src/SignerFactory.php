@@ -40,6 +40,7 @@ abstract class SignerFactory
      * @param string $algorithm
      *
      * @throws InvalidAlgException
+     *
      * @return Signer
      */
     public static function build(string $algorithm): Signer

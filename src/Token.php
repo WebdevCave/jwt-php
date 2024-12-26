@@ -92,6 +92,7 @@ class Token
      * @throws InvalidAlgException
      * @throws InvalidTokenException
      * @throws TokenNotPresentException
+     *
      * @return Token
      */
     public static function fromAuthorizationBearer(): Token
@@ -136,6 +137,7 @@ class Token
      *
      * @throws InvalidAlgException
      * @throws InvalidTokenException
+     *
      * @return Token
      */
     public static function fromString(string $token): Token
@@ -220,6 +222,7 @@ class Token
      * @param string $param
      *
      * @throws TokenNotPresentException
+     *
      * @return Token
      */
     public static function fromQueryString(string $param = 'token'): Token
